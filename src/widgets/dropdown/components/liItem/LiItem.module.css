@@ -1,0 +1,24 @@
+.li {
+    box-sizing: border-box;
+    height: 52px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    padding: 0 16px;
+}
+
+.li:nth-child(n):not(:last-child) {
+    border-bottom: 1px solid #F4F4F4;
+
+}
+
+.li__text {
+    flex-grow: 1;
+    text-align: left;
+    font-size: 16px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    user-select: none;
+}

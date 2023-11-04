@@ -1,0 +1,15 @@
+.icon-wrapper {
+    display: flex;
+    align-items: center;
+
+    height: 24px;
+    min-height: 24px;
+    width: 24px;
+    min-width: 24px;
+
+    margin-right: 8px;
+}
+
+.icon {
+    width: 100%;
+}
