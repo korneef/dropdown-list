@@ -44,7 +44,16 @@
     gap: 4px;
     align-items: center;
 
-    overflow: hidden; /* Скрываем избыточное содержимое */
+    overflow: hidden;
+    overflow-y: scroll;
+    max-height: 100px;
+
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.dropdown__repletion::-webkit-scrollbar {
+    display: none;
 }
 
 .dropdown__placeholder {

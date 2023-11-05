@@ -3,11 +3,11 @@ import './App.css';
 import { Dropdown } from 'widgets';
 import { TData } from 'Dropdown';
 import { languagesData } from '../mockData/languages';
+import { carModelsData } from '../mockData/cars';
 
 function App() {
   const [multiselect, setMultiselect] = useState(true)
-
-  const [languages, setLanguages] = useState<Array<TData>>(languagesData)
+  const [languages, setLanguages] = useState<Array<TData>>(carModelsData)
 
   return (
     <div className="App">
