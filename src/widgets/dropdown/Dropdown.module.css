@@ -39,6 +39,7 @@
 .dropdown__repletion {
     display: flex;
     flex-wrap: wrap;
+    flex-grow: 1;
     justify-content: flex-start;
     gap: 4px;
     align-items: center;

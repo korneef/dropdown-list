@@ -2,42 +2,19 @@ import React, { useState } from 'react';
 import './App.css';
 import { Dropdown } from 'widgets';
 import { TData } from 'Dropdown';
-import italy from 'shared/icons/flags/italy.svg';
-import russian from 'shared/icons/flags/russian.svg';
-import deutsch from 'shared/icons/flags/deustch.svg';
-import poland from 'shared/icons/flags/poland.svg';
+import { languagesData } from '../mockData/languages';
 
 function App() {
   const [multiselect, setMultiselect] = useState(true)
-  const data: Array<TData> = [
-    {
-      itemName: 'Русский',
-      itemSelected: false,
-      itemIcon: russian
-    },
-    {
-      itemName: 'Итальянский',
-      itemSelected: false,
-      itemIcon: italy
-    },
-    {
-      itemName: 'Немецкий',
-      itemSelected: false,
-      itemIcon: deutsch
-    },
-    {
-      itemName: 'Польский',
-      itemSelected: false,
-      itemIcon: poland
-    },
-  ]
-  const [languages, setLanguages] = useState<Array<TData>>(data)
+
+  const [languages, setLanguages] = useState<Array<TData>>(languagesData)
 
   return (
     <div className="App">
       <div className={'checkbox'}>
         <label><input
           type={ 'checkbox' }
+          checked={multiselect}
           onChange={ () => {
             setLanguages(prevState => {
               return prevState.map(item => {

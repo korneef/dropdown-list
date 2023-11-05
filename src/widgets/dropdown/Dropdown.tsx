@@ -36,6 +36,7 @@ function Dropdown(props: TDropdown) {
   const handleSelectItem = (clickedItem: TData): void => {
     handleSelect(prevState => {
       const itemIdx = prevState.findIndex(el => clickedItem === el);
+      const selectedItem = { ...prevState[itemIdx] }
       if (itemIdx === -1) return prevState;
       const newState = prevState.map(item => {
         return {
@@ -43,7 +44,7 @@ function Dropdown(props: TDropdown) {
           itemSelected: false
         }
       });
-      newState[itemIdx] = {...newState[itemIdx], itemSelected: !newState[itemIdx].itemSelected}
+      newState[itemIdx] = {...selectedItem, itemSelected: !selectedItem.itemSelected}
       return newState;
     });
   }
@@ -76,6 +77,7 @@ function Dropdown(props: TDropdown) {
               key={ nanoid() }
               itemName={ item.itemName }
               handleDelete={() => handleMultiSelectItem(item)}
+              multiSelect={multiSelect}
             />
           }) : <div className={s['dropdown__placeholder']}>{ placeholder }</div> }
         </div>

@@ -1,19 +1,29 @@
 .chip {
-    position: relative;
     display: inline-block;
-    padding: 6px 18px 6px 12px;
+    padding: 6px 8px 6px 12px;
     max-width: 150px;
 
     border-radius: 8px;
     background-color: #F4F4F4;
+    cursor: pointer;
+    transition: background-color 300ms;
+}
 
-    cursor: auto;
+.chip_non-multiselect {
+    background-color: #ffffff;
+    max-width: none;
+    width: 100%;
+}
+
+.chip:hover {
+    background-color: #d2d2d2;
+    transition: background-color 300ms;
 }
 
 .chip__flex-wrapper {
     height: 100%;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
     flex-wrap: nowrap;
 }
@@ -21,31 +31,22 @@
 .text {
     user-select: none;
     text-align: left;
+    white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
     display: inline-block;
-    margin-right: 8px;
+    margin-right: 4px;
     font-size: 12px;
     font-style: normal;
     font-weight: 500;
-    line-height: 12px; /* 100% */}
+    line-height: 12px;
+}
 
 .delete__button {
-    position: absolute;
-    top: 50%;
-    right: 4px;
-    transform: translate(0, -50%);
-    width: 16px;
-    height: 16px;
-    border-radius: 50%;
+    width: 12px;
+    height: 12px;
     background-image: url("../../assets/icons/close_icon.svg");
     background-repeat: no-repeat;
     background-position: center center;
-    cursor: pointer;
-    transition: background-color 300ms;
-}
-
-.delete__button:hover {
-    background-color: #d2d2d2;
     transition: background-color 300ms;
 }
