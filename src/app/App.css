@@ -56,11 +56,20 @@
 
 .App {
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: left;
     text-align: center;
     padding: 100px;
+    width: 400px;
+    margin-left: auto;
+    margin-right: auto;
 
     font-family: Inter, serif;
+}
+
+.checkbox {
+    text-align: left;
+    margin-bottom: 30px;
 }
 
 .App-logo {

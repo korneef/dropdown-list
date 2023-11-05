@@ -1,23 +1,23 @@
 import React from 'react';
 import s from './ItemsList.module.css';
 import LiItem from '../liItem/LiItem';
-import italy from 'shared/icons/flags/italy.svg';
-import russian from 'shared/icons/flags/russian.svg';
-import deustch from 'shared/icons/flags/deustch.svg';
-import poland from 'shared/icons/flags/poland.svg';
+import type { THandleSelectItem, TData, TDropdown } from 'Dropdown';
+import { nanoid } from 'nanoid';
 
-interface Props {
+type TDropdownProps = {
+  data: Array<TData>;
+  handleSelectItem: THandleSelectItem;
+} & Pick<TDropdown, 'multiSelect'>;
 
-}
-
-function ItemsList(props: Props) {
+function ItemsList({data, handleSelectItem, multiSelect}: TDropdownProps ) {
   return (
-    <ul className={s['items-list']}>
-      <LiItem itemIcon={italy} itemName={'Италия'} />
-      <LiItem itemIcon={russian} itemName={'Россия'} />
-      <LiItem itemIcon={deustch} itemName={'Германия'} />
-      <LiItem itemIcon={poland} itemName={'Польша'} />
-
+    <ul className={ s['items-list'] }>
+      { data.map(item => <LiItem
+        key={ nanoid() }
+        handleSelectItem={ handleSelectItem }
+        item={ item }
+        multiSelect={ multiSelect }
+      />) }
     </ul>
   );
 }

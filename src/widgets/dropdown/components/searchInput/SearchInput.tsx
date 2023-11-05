@@ -1,19 +1,17 @@
 import React from 'react';
-import s from './SearchInput.module.css'
+import { TSearchRequest } from 'Dropdown';
+import s from './SearchInput.module.css';
 
-interface Props {
-
-}
-
-function SearchInput(props: Props) {
+function SearchInput({searchRequest, handleChange}: TSearchRequest) {
   return (
     <div className={ s['search-input__wrapper'] }>
       <input
         type={ 'text' }
         className={ s['search-input'] }
         placeholder={ 'Поиск' }
-      >
-      </input>
+        value={searchRequest}
+        onChange={(evt) => handleChange(evt.target.value)}
+      />
     </div>
   );
 }

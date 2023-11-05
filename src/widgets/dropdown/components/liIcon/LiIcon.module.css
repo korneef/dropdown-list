@@ -8,8 +8,10 @@
     min-width: 24px;
 
     margin-right: 8px;
+
 }
 
 .icon {
     width: 100%;
+    user-select: none;
 }

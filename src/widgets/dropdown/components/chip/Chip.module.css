@@ -1,6 +1,7 @@
 .chip {
+    position: relative;
     display: inline-block;
-    padding: 6px 12px;
+    padding: 6px 18px 6px 12px;
     max-width: 150px;
 
     border-radius: 8px;
@@ -30,10 +31,21 @@
     line-height: 12px; /* 100% */}
 
 .delete__button {
-    width: 12px;
-    height: 12px;
+    position: absolute;
+    top: 50%;
+    right: 4px;
+    transform: translate(0, -50%);
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
     background-image: url("../../assets/icons/close_icon.svg");
     background-repeat: no-repeat;
     background-position: center center;
     cursor: pointer;
+    transition: background-color 300ms;
+}
+
+.delete__button:hover {
+    background-color: #d2d2d2;
+    transition: background-color 300ms;
 }

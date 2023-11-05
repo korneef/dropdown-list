@@ -6,11 +6,38 @@
     align-items: center;
     max-width: 100%;
     padding: 0 16px;
+    transition: background-color 300ms;
+    cursor: pointer;
+}
+
+.li:hover, .li:focus {
+    background-color: #f6f7ff;
+    transition: background-color 300ms;
+}
+
+.li-selected_non-multiselect {
+    background-color: #84a3ff;
+}
+
+.li-selected_non-multiselect:hover, .li-selected_non-multiselect:focus {
+    background-color: #4b76f6;
 }
 
 .li:nth-child(n):not(:last-child) {
     border-bottom: 1px solid #F4F4F4;
+}
 
+.li:first-child {
+    margin-top: 5px;
+    border-radius: 12px 12px 0 0;
+}
+
+.li:last-child {
+    border-radius: 0 0 12px 12px;
+}
+
+.li:only-child {
+    border-radius: 12px 12px 12px 12px;
 }
 
 .li__text {

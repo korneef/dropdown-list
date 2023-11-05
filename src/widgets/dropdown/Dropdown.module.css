@@ -8,6 +8,7 @@
 
 .dropdown__header {
     margin-bottom: 4px;
+    user-select: none;
 
     color: #333;
     font-size: 14px;
@@ -20,6 +21,7 @@
 .dropdown {
     box-sizing: border-box;
     width: 100%;
+    min-height: 46px;
 
     display: flex;
     flex-wrap: nowrap;
@@ -40,6 +42,18 @@
     justify-content: flex-start;
     gap: 4px;
     align-items: center;
+
+    overflow: hidden; /* Скрываем избыточное содержимое */
+}
+
+.dropdown__placeholder {
+    color: #C1C1C1;
+    user-select: none;
+
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
 }
 
 .dropdown__arrow {
@@ -51,10 +65,12 @@
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
+    transition: transform 150ms;
 }
 
 .dropdown__arrow_active {
-    /*transform: rotate(180);*/
+    transform: rotate(180deg);
+    transition: transform 150ms;
 }
 
 .dropdown__dropped-list {
@@ -66,5 +82,31 @@
     border-radius: 12px;
     background: #FFF;
 
-    box-shadow: 0px 4px 32px 0px rgba(51, 51, 51, 0.15);
+    box-shadow: 0 4px 32px 0 rgba(51, 51, 51, 0.15);
+
+    opacity: 0; /* Начинаем с нулевой прозрачности */
+    animation: fadeIn 200ms ease-in-out forwards; /* Применяем анимацию fadeIn */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.dropdown__dropped-list_disappear {
+    opacity: 1;
+    animation: fadeOut 200ms ease-in-out forwards; /* Применяем анимацию fadeIn */
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
 }

@@ -17,14 +17,15 @@
     background: #FFF;
     top: 0;
     left: 0;
-    transition: background-color 400ms, border-color 400ms;
+    transition: background-color 3s, border-color 3s;
+    cursor: pointer;
 }
 
 .checkbox-wrapper_active::before {
     border-color: #0049D9;
     background: #005FFD url("../../assets/icons/tick_icon.svg");
     background-size: contain;
-    transition: background-color 400ms, border-color 400ms;
+    transition: background-color 3s, border-color 3s;
 }
 
 .checkbox {
