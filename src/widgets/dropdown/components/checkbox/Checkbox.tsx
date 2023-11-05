@@ -1,7 +1,7 @@
 import React from 'react';
-import s from './Checkbox.module.css';
 import cn from 'classnames';
 import type { TData } from 'Dropdown';
+import s from './Checkbox.module.css';
 
 function Checkbox({itemSelected}: Pick<TData, 'itemSelected'>) {
 

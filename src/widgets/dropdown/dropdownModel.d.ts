@@ -1,6 +1,5 @@
 declare module 'Dropdown' {
   import { Dispatch, SetStateAction } from 'react';
-  //todo update types description
   /** Тип согласно которому передаются данные в dropdown */
   export type TDropdown = {
     /** Исходные данные, которые необходимо отобразить в dropdown из useState */
@@ -34,7 +33,6 @@ declare module 'Dropdown' {
     /** Функция изменения поискового запроса */
     handleChange: Dispatch<SetStateAction<string>>,
   }
-  //todo update type
   /** функция, которая меняет состояние элемента в списке с выбранного на не выбранный и наоборот
    * @param item - элемент списка по которому происходит событие
    * */

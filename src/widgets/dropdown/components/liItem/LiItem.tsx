@@ -1,9 +1,9 @@
 import React from 'react';
-import s from './LiItem.module.css';
 import Checkbox from '../checkbox/Checkbox';
 import LiIcon from '../liIcon/LiIcon';
 import type { TData, TDropdown, THandleSelectItem } from 'Dropdown';
 import cn from 'classnames';
+import s from './LiItem.module.css';
 
 type Props = {
   item: TData,
@@ -22,7 +22,7 @@ function LiItem({item, handleSelectItem, multiSelect}: Props) {
       ) }
       onClick={ () => handleSelectItem(item) }
     >
-      { itemIcon && <LiIcon src={ itemIcon } alt={ itemName }/> }
+      { itemIcon && <LiIcon itemIcon={ itemIcon } itemName={ itemName }/> }
       <div className={ s['li__text'] }>{ itemName }</div>
       { multiSelect && <Checkbox itemSelected={ itemSelected }/> }
     </li>

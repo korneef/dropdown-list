@@ -14,7 +14,7 @@ function Dropdown(props: TDropdown) {
     expandable = true,
     handleSelect,
     name,
-    placeholder
+    placeholder = ''
   } = props;
   const [searchRequest, setSearchRequest] = useState('');
   const [isExpand, setIsExpand] = useState(false);
@@ -37,7 +37,7 @@ function Dropdown(props: TDropdown) {
       document.addEventListener('mousedown', checkIsFocus)
       return () => document.removeEventListener('mousedown', checkIsFocus);
     },
-    [isExpand, dropdownRef])
+    [isExpand, dropdownRef]);
 
   const selectedItems = useMemo(() => {
     return data.filter(item => item.itemSelected);

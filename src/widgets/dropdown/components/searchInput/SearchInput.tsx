@@ -3,7 +3,7 @@ import { TSearchRequest } from 'Dropdown';
 import s from './SearchInput.module.css';
 
 function SearchInput({searchRequest, handleChange}: TSearchRequest) {
-  const inputRef = useRef<HTMLInputElement | null> (null)
+  const inputRef = useRef<HTMLInputElement | null> (null);
 
   useEffect(() => {
     if (inputRef === null || inputRef.current === null) return;
