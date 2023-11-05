@@ -10,7 +10,8 @@ import s from './Dropdown.module.css';
 function Dropdown(props: TDropdown) {
   const {
     data,
-    multiSelect,
+    multiSelect = true,
+    expandable = true,
     handleSelect,
     name,
     placeholder
@@ -36,7 +37,7 @@ function Dropdown(props: TDropdown) {
   const handleSelectItem = (clickedItem: TData): void => {
     handleSelect(prevState => {
       const itemIdx = prevState.findIndex(el => clickedItem === el);
-      const selectedItem = { ...prevState[itemIdx] }
+      const selectedItem = {...prevState[itemIdx]}
       if (itemIdx === -1) return prevState;
       const newState = prevState.map(item => {
         return {
@@ -71,20 +72,23 @@ function Dropdown(props: TDropdown) {
         onClick={ () => handleExpand() }
       >
 
-        <div className={ s['dropdown__repletion'] }>
+        <div className={ cn(
+          s['dropdown__repletion'],
+          {[s['dropdown__repletion_not-expandable']]: !expandable}
+        )}>
           { selectedItems.length > 0 ? selectedItems.map(item => {
             return <Chip
               key={ nanoid() }
               itemName={ item.itemName }
-              handleDelete={() => handleMultiSelectItem(item)}
-              multiSelect={multiSelect}
+              handleDelete={ () => handleMultiSelectItem(item) }
+              multiSelect={ multiSelect }
             />
-          }) : <div className={s['dropdown__placeholder']}>{ placeholder }</div> }
+          }) : <div className={ s['dropdown__placeholder'] }>{ placeholder }</div> }
         </div>
 
         <div className={ cn(
           s['dropdown__arrow'],
-          { [s['dropdown__arrow_active']]: disappearEffect }
+          {[s['dropdown__arrow_active']]: disappearEffect}
         ) }/>
       </div>
 
@@ -97,7 +101,7 @@ function Dropdown(props: TDropdown) {
           <ItemsList
             data={ data.filter(item => item.itemName.toLowerCase().includes(searchRequest.trim().toLowerCase())) }
             handleSelectItem={ multiSelect ? handleMultiSelectItem : handleSelectItem }
-            multiSelect={multiSelect}
+            multiSelect={ multiSelect }
           />
         </div> }
     </div>

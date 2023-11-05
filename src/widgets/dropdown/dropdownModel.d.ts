@@ -10,7 +10,9 @@ declare module 'Dropdown' {
     /** Placeholder */
     placeholder?: string,
     /** Включение и выключение мультиселекта */
-    multiSelect: boolean,
+    multiSelect?: boolean,
+    /** Включение и выключение автоматического увеличения блока выбранных элементов */
+    expandable?: boolean,
     /** функция изменения data (из useState) */
     handleSelect: Dispatch<SetStateAction<TData[]>>,
   }

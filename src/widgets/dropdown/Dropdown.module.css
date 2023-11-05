@@ -1,7 +1,8 @@
 .dropdown-wrapper {
     position: relative;
     box-sizing: border-box;
-    width: 400px;
+    width: 100%;
+    min-width: 200px;
 
     font-family: Inter, serif;
 }
@@ -50,6 +51,11 @@
 
     -ms-overflow-style: none;
     scrollbar-width: none;
+}
+
+.dropdown__repletion_not-expandable {
+    flex-wrap: nowrap;
+    overflow-x: scroll;
 }
 
 .dropdown__repletion::-webkit-scrollbar {

@@ -59,7 +59,7 @@
     flex-direction: column;
     justify-content: left;
     text-align: center;
-    padding: 100px;
+    padding: 40px;
     width: 400px;
     margin-left: auto;
     margin-right: auto;
@@ -67,9 +67,18 @@
     font-family: Inter, serif;
 }
 
-.checkbox {
+.control-panel {
     text-align: left;
     margin-bottom: 30px;
+    user-select: none;
+}
+
+.control-panel > div {
+    margin-bottom: 15px;
+}
+
+.control-panel > div > input {
+    width: 60px;
 }
 
 .App-logo {
