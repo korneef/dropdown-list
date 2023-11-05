@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import type { TData, TDropdown } from 'Dropdown';
 import Chip from './components/chip/Chip';
 import SearchInput from './components/searchInput/SearchInput';
@@ -19,6 +19,26 @@ function Dropdown(props: TDropdown) {
   const [searchRequest, setSearchRequest] = useState('');
   const [isExpand, setIsExpand] = useState(false);
   const [disappearEffect, setDisappearEffect] = useState(true);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
+
+  useEffect(() => {
+      if (!isExpand) return;
+
+      const checkIsFocus = (evt: MouseEvent) => {
+        if (!dropdownRef.current) return;
+        if (!dropdownRef.current.contains(evt.target as Node)) {
+          setDisappearEffect(true);
+          setTimeout(() => {
+            setIsExpand(false);
+            setSearchRequest('');
+          }, 300)
+        };
+      };
+
+      document.addEventListener('mousedown', checkIsFocus)
+      return () => document.removeEventListener('mousedown', checkIsFocus);
+    },
+    [isExpand, dropdownRef])
 
   const selectedItems = useMemo(() => {
     return data.filter(item => item.itemSelected);
@@ -64,7 +84,7 @@ function Dropdown(props: TDropdown) {
   }
 
   return (
-    <div className={ s['dropdown-wrapper'] }>
+    <div className={ s['dropdown-wrapper'] } ref={dropdownRef}>
       { name && <div className={ s['dropdown__header'] }>{ name }</div> }
 
       <div
