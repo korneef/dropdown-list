@@ -39,6 +39,16 @@ function Dropdown(props: TDropdown) {
     },
     [isExpand, dropdownRef]);
 
+  useEffect(() => {
+    if(isExpand) return;
+    if (dropdownRef.current) {
+      window.scrollTo({
+        top: dropdownRef.current.offsetTop,
+        behavior: 'smooth',
+      });
+    }
+  }, [isExpand])
+
   const selectedItems = useMemo(() => {
     return data.filter(item => item.itemSelected);
   }, [data]);
