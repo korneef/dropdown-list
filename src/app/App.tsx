@@ -6,10 +6,14 @@ import { languagesData } from '../mockData/languages/languages';
 import { carModelsData } from '../mockData/cars/cars';
 
 function App() {
+  enum listType {
+    cars = 'cars',
+    languages = 'languages'
+  }
   const [multiselect, setMultiselect] = useState(true);
   const [expandable, setExpandable] = useState(true);
   const [data, setData] = useState<Array<TData>>(languagesData)
-  const [selectedOption, setSelectedOption] = useState('languages');
+  const [selectedOption, setSelectedOption] = useState<string>(listType.languages);
   const [dropdownWidth, setDropdownWidth] = useState(400);
   const [headerData, setHeaderData] = useState({
     name: 'Языки', placeholder: 'Выберите язык'
@@ -18,11 +22,11 @@ function App() {
   const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     setSelectedOption(event.target.value);
     switch (event.target.value) {
-      case 'languages':
+      case listType.languages:
         setData(languagesData);
         setHeaderData({name: 'Языки', placeholder: 'Выберите язык'})
         break
-      case 'cars':
+      case listType.cars:
         setData(carModelsData);
         setHeaderData({name: 'Автомобили', placeholder: 'Выберите автомобиль'})
         break
@@ -38,20 +42,20 @@ function App() {
             <label>
               <input
                 type="radio"
-                value="languages"
-                checked={ selectedOption === 'languages' }
+                value={listType.languages}
+                checked={ selectedOption === listType.languages }
                 onChange={ handleOptionChange }
-              /> Языки
+              /> Список языков (с иконками)
             </label>
           </div>
           <div>
             <label>
               <input
                 type="radio"
-                value="cars"
-                checked={ selectedOption === 'cars' }
+                value={listType.cars}
+                checked={ selectedOption === listType.cars }
                 onChange={ handleOptionChange }
-              /> Машины
+              /> Список машин (без иконок)
             </label>
           </div>
         </div>
