@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useMemo, useRef, useState } from 'react';
 import type { TData, TDropdown } from 'Dropdown';
 import Chip from './components/chip/Chip';
 import SearchInput from './components/searchInput/SearchInput';
@@ -40,7 +40,7 @@ function Dropdown(props: TDropdown) {
     [isExpand, dropdownRef]);
 
   useEffect(() => {
-    if(isExpand) return;
+    if (!isExpand) return;
     if (dropdownRef.current) {
       window.scrollTo({
         top: dropdownRef.current.offsetTop,
@@ -93,7 +93,7 @@ function Dropdown(props: TDropdown) {
   }
 
   return (
-    <div className={ s['dropdown-wrapper'] } ref={dropdownRef}>
+    <div className={ s['dropdown-wrapper'] } ref={ dropdownRef }>
       { name && <div className={ s['dropdown__header'] }>{ name }</div> }
 
       <div
@@ -104,7 +104,7 @@ function Dropdown(props: TDropdown) {
         <div className={ cn(
           s['dropdown__repletion'],
           {[s['dropdown__repletion_not-expandable']]: !expandable}
-        )}>
+        ) }>
           { selectedItems.length > 0 ? selectedItems.map(item => {
             return <Chip
               key={ nanoid() }
