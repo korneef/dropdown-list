@@ -1,7 +1,7 @@
 [![Build Status](https://api.cirrus-ci.com/github/korneef/dropdown-list.svg?branch=main)](https://cirrus-ci.com/github/korneef/dropdown-list)
 
 ## Ссылка на опубликованный проект:
-https://korneef.github.io/dropdown-list/#/
+https://korneef.github.io/dropdown-list/
 
 
 ## Установка и запуск проекта:
