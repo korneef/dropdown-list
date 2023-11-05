@@ -14,7 +14,7 @@ function App() {
   const [expandable, setExpandable] = useState(true);
   const [data, setData] = useState<Array<TData>>(languagesData)
   const [selectedOption, setSelectedOption] = useState<string>(listType.languages);
-  const [dropdownWidth, setDropdownWidth] = useState(400);
+  const [dropdownWidth, setDropdownWidth] = useState(300);
   const [headerData, setHeaderData] = useState({
     name: 'Языки', placeholder: 'Выберите язык'
   })
