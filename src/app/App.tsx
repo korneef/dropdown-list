@@ -16,7 +16,6 @@ function App() {
   })
 
   const handleOptionChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    console.log(selectedOption === 'cars')
     setSelectedOption(event.target.value);
     switch (event.target.value) {
       case 'languages':
