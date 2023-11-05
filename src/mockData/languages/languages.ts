@@ -1,7 +1,7 @@
-import russian from '../shared/icons/flags/russian.svg';
-import italy from '../shared/icons/flags/italy.svg';
-import deutsch from '../shared/icons/flags/deustch.svg';
-import poland from '../shared/icons/flags/poland.svg';
+import russian from  './flags/russian.svg';
+import italy from './flags/italy.svg';
+import deutsch from './flags/deustch.svg';
+import poland from './flags/poland.svg';
 
 export const languagesData = [
   {

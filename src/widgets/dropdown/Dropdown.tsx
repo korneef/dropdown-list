@@ -32,9 +32,8 @@ function Dropdown(props: TDropdown) {
             setIsExpand(false);
             setSearchRequest('');
           }, 300)
-        };
+        }
       };
-
       document.addEventListener('mousedown', checkIsFocus)
       return () => document.removeEventListener('mousedown', checkIsFocus);
     },

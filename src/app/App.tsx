@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './App.css';
 import { Dropdown } from 'widgets';
 import { TData } from 'Dropdown';
-import { languagesData } from '../mockData/languages';
-import { carModelsData } from '../mockData/cars';
+import { languagesData } from '../mockData/languages/languages';
+import { carModelsData } from '../mockData/cars/cars';
 
 function App() {
   const [multiselect, setMultiselect] = useState(true);
