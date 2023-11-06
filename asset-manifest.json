@@ -1,0 +1,31 @@
+{
+  "files": {
+    "main.css": "/dropdown-list/static/css/main.f5c50225.css",
+    "main.js": "/dropdown-list/static/js/main.627f6486.js",
+    "static/js/787.6804c560.chunk.js": "/dropdown-list/static/js/787.6804c560.chunk.js",
+    "static/media/Inter-Bold.woff": "/dropdown-list/static/media/Inter-Bold.a9221dece54e5fc1087a.woff",
+    "static/media/Inter-SemiBold.woff": "/dropdown-list/static/media/Inter-SemiBold.d703b3892cb1a467cf8a.woff",
+    "static/media/Inter-ExtraBold.woff": "/dropdown-list/static/media/Inter-ExtraBold.08e907e41668e24eaf79.woff",
+    "static/media/Inter-Medium.woff": "/dropdown-list/static/media/Inter-Medium.f65c8c00e68bb792e264.woff",
+    "static/media/Inter-ExtraLight.woff": "/dropdown-list/static/media/Inter-ExtraLight.497b252ad22b4ecb563c.woff",
+    "static/media/Inter-Black.woff": "/dropdown-list/static/media/Inter-Black.f961eb748fbf208666ad.woff",
+    "static/media/Inter-Thin.woff": "/dropdown-list/static/media/Inter-Thin.1d8237cae424da997733.woff",
+    "static/media/Inter-Regular.woff": "/dropdown-list/static/media/Inter-Regular.8a19fc72bf6ea80a89e8.woff",
+    "static/media/deustch.svg": "/dropdown-list/static/media/deustch.6b6947f619dc643f139642d1d139a2bd.svg",
+    "static/media/italy.svg": "/dropdown-list/static/media/italy.3f463229a8bfae6351dcbce3073f8322.svg",
+    "static/media/russian.svg": "/dropdown-list/static/media/russian.163dcc5032ca1e994d0608a5b84f0888.svg",
+    "index.html": "/dropdown-list/index.html",
+    "static/media/search_icon.svg": "/dropdown-list/static/media/search_icon.3e718fd2ecf76533f4dc.svg",
+    "static/media/close_icon.svg": "/dropdown-list/static/media/close_icon.86c142e1a06004d038a3.svg",
+    "static/media/poland.svg": "/dropdown-list/static/media/poland.bf68faefde62cb18771e26bde91da6f0.svg",
+    "static/media/tick_icon.svg": "/dropdown-list/static/media/tick_icon.317f3ecab2414264869b.svg",
+    "static/media/arrow_icon.svg": "/dropdown-list/static/media/arrow_icon.e9f22dfda3aac15c8548.svg",
+    "main.f5c50225.css.map": "/dropdown-list/static/css/main.f5c50225.css.map",
+    "main.627f6486.js.map": "/dropdown-list/static/js/main.627f6486.js.map",
+    "787.6804c560.chunk.js.map": "/dropdown-list/static/js/787.6804c560.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f5c50225.css",
+    "static/js/main.627f6486.js"
+  ]
+}
